@@ -14,7 +14,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        $comicsList = Comic::orderBy('title')->get();
+
+        return view('comics.index', compact('comicsList'));
     }
 
     /**
