@@ -11,6 +11,8 @@
                 <th scope="col">Tipo</th>
                 <th scope="col">Prezzo</th>
                 <th scope="col">Dettagli</th>
+                <th scope="col">Opzioni</th>
+                <th scope="col">Modifica</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +24,8 @@
                     <td>{{ $comic['type'] }}</td>
                     <td>{{ $comic['price'] }}</td>
                     <td><a href="{{ route('comics.show', $comic) }}" class="btn btn-primary">Vai</a></td>
+
+                    <td><a href="{{route('comics.edit', $comic)}}" class="btn btn-dark">Modifica</a></td>
 
                     <td>
                         <form action="{{route('comics.destroy', $comic)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare {{$comic->title}}?')">
