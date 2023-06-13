@@ -1,7 +1,8 @@
 @extends('layout.main')
 
 @section('content')
-    <table class="table">
+    <h1 class="pb-3 mt-5">Lista fumetti</h1>
+    <table class="table border">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -20,7 +21,7 @@
                     <td>{{ $comic['series'] }}</td>
                     <td>{{ $comic['type'] }}</td>
                     <td>{{ $comic['price'] }}</td>
-                    <td><a href="" class="btn btn-primary">Vai</a></td>
+                    <td><a href="{{ route('comics.show', $comic) }}" class="btn btn-primary">Vai</a></td>
 
                 </tr>
             @endforeach
