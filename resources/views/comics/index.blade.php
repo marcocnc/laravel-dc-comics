@@ -23,6 +23,14 @@
                     <td>{{ $comic['price'] }}</td>
                     <td><a href="{{ route('comics.show', $comic) }}" class="btn btn-primary">Vai</a></td>
 
+                    <td>
+                        <form action="{{route('comics.destroy', $comic)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare {{$comic->title}}?')">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" title="delete" class="btn btn-danger">Elimina</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
 
