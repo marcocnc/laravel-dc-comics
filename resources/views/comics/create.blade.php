@@ -21,6 +21,11 @@
                 <textarea type="textarea" class="form-control" id="description" name="description"></textarea>
             </div>
 
+            <div class="mb-3">
+                <label for="price" class="form-label">Prezzo</label>
+                <input type="text" class="form-control" id="price" name="price">
+            </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
