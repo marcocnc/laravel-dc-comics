@@ -22,6 +22,10 @@
                 <a class="nav-link" href="{{route('contacts')}}"> Contatti </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('comics.create')}}"> Crea nuovo prodotto </a>
+            </li>
+
         </ul>
     </div>
 </nav>
