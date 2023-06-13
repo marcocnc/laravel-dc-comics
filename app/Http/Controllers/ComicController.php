@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\ComicRequest;
 class ComicController extends Controller
 {
     /**
@@ -35,7 +35,7 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
         // Salvo in una variabile il metodo request->all()
         $new_data = $request->all();
@@ -80,7 +80,11 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+
+        $comic->update($form_data);
+
+        return view('comics.show', $comic);
     }
 
     /**
